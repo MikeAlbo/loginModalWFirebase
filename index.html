@@ -44,12 +44,45 @@
     <body ng-controller="mainCtrl">
         
         <!-- header -->
-        
-        
         <ng-include src="'views/navbar.html'"></ng-include>
-    
         
-        <h1>{{message}}</h1>
+    
+        <!-- main content -->
+        
+        <div class="col-md-1 hidden-sm hidden-xs" id="menuDiv">
+            <h2 class="text-center">HTML/CSS</h2>
+            
+            <dl>
+                <dt>HTML</dt>
+                <dd>Creat a div</dd>
+                <dd>unordered list</dd>
+                <dd>something else</dd>
+                <dt>CSS</dt>
+                <dd>change font color</dd>
+                <dd>creating a nav bar</dd>
+                
+            </dl>
+        </div>
+        <div class="col-md-11 col-sm-12 col-xs-12" id="contentArea">
+            <div class="col-md-6 col-sm-12 text-center topic-description">
+                <h3>Create a Div <br><small>HTML</small></h3>
+                <p>Pug cornhole crucifix, umami taxidermy vice pabst cronut selvage chia. Pork belly iPhone franzen celiac etsy. Pork belly stumptown YOLO tumblr. 8-bit actually street art, locavore shabby chic pabst tofu biodiesel vice selvage aesthetic brooklyn hashtag. Organic microdosing viral, kinfolk chambray vegan jean shorts kogi. Celiac echo park art party, marfa mlkshk meggings typewriter XOXO etsy locavore lo-fi brooklyn helvetica. Hashtag deep v tacos put a bird on it gastropub hammock, readymade church-key biodiesel master cleanse chillwave chartreuse YOLO narwhal beard.</p>
+                
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-html5" aria-hidden="true"></i></a> </li>
+                    <li><a href="#"><i class="fa fa-css3" aria-hidden="true"></i></a> </li>
+                </ul>
+            </div>
+            
+            <div class="col-md-6 col-sm-12 col-xs-12 code-view">
+                <p>
+                    &lang;div&rang; <br> &lang;!-- content goes here --&rang; <br> &lang;/div&rang;
+                </p>
+            
+            </div>
+        </div> <!-- end content area -->
+        
         
         
         
