@@ -84,8 +84,42 @@
         </div> <!-- end content area -->
         
         
+        <!--   //// message alerts  \\\\ -->
         
+        <!-- insert error messages -->
+        <ng-include src="'views/errorAlert.html'"></ng-include>
         
+        <!-- insert footer div -->
+        <div class="alert alert-info alert-dismissible col-xs-12" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       <!--     <div class="col-xs-12" id="footerSignedIn">
+            <div class="col-xs-12 col-sm-6 pull-right text-center ">
+            <h4>Welcome back Michael! 
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <small>
+                    <a href="#">Not you?</a>
+                </small> </h4>
+            </div>
+            <div class="col-xs-12 hidden-xs col-sm-6 text-center">
+                <h4 class="col-xs-6 col-sm-4 col-sm-offset-3"><a href="#">Updates  <span class="badge">2</span></a></h4>
+                <h4 class="col-xs-6 col-sm-4 col-sm-offset-1"><a href="#">New Comments <span class="badge">2</span></a></h4>
+            </div>
+            </div> --> <!-- emd footer signed in -->
+            <div class="col-xs-12" id="footerNotSingedIn">
+                <div class="col-xs-6 text-center" id="footerMessage">
+                    <h4>Hello!</h4> <p>Welcome to Login Demo.</p>
+                </div>
+                <div class="col-xs-6 text-center" id="loginRegisterButtons">
+                <div class="col-xs-4 col-xs-offset-3">
+                    <button class="btn btn-default btn-block">Login</button>
+                    </div>
+                <div class="col-xs-4 ">
+                    <button class="btn btn-default btn-block">Register</button>
+                    </div>    
+                
+                </div>
+            </div>
+</div>
         
     
         <!-- jQuery, bootstrap JS, and custom JS -->

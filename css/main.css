@@ -148,4 +148,44 @@ body{
 }
 
 
+/* -------------------------------------- */
+/* alert*/
+
+.alert-danger {
+    height: 10%;
+    margin-bottom: 0;
+    position: fixed;
+    bottom: 10px;
+}
+
+.alert-info {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 1px;
+}
+
+#footerSignedIn h4 a{
+    font-size: 1em;
+    color: rgba(100,100,100,1) !important;
+}
+
+#footerSignedIn .badge{
+    background-color: transparent;
+    color: red;
+    font-size: .8em;
+    
+}
+
+#footerSignedIn small {
+    font-size: .6em;
+    margin-left: 1em;
+}
+
+#loginRegisterButtons button {
+    height: 50px;
+}
+
+#footerNotSingedIn p {
+    font-size: .8em;
+}
 
