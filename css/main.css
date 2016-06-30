@@ -71,11 +71,11 @@ body{
 /* Fixed Left Menu Bar */
 
 #menuDiv {
-    overflow: scroll;
+    overflow-y:auto;
     border-right: 1px solid rgba(150,150,150,.5);
     height: 100%;
     background-color: rgba(75,75,75,1);
-    padding: 0 .5em;
+    padding: 0 .2em;
 }
 
 #menuDiv h2 {
