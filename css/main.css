@@ -313,6 +313,20 @@ body{
     background-color: rgba(100,100,100,1);
 }
 
+.close {
+    position: relative !important;
+    top: .2em !important;
+}
+
+
+/* --- form errors -- */
+
+.formError {
+    color: red;
+    margin-top: 1em;
+}
+
+
 
     
 
