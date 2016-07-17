@@ -29,8 +29,18 @@
         
         <script type="application/javascript" src="bower_components/angular/angular.min.js"></script>
         
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/2.0.0/angularfire.min.js"></script>
+        
         <!-- load angular files -->
-        <script type="application/javascript" src="app/controllers/app.js"> </script>
+        <script type="application/javascript" src="app/firebase/firebaseAuth.js"></script>
+        <script type="application/javascript" src="app/app.js"> </script>
+        <script type="application/javascript" src="app/controllers/auth.js"></script>
+        <script type="application/javascript" src="app/controllers/mainCtrl.js"></script>
+        <script type="application/javascript" src="app/factory/firebaseAuth.js"></script>
       
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -88,9 +98,10 @@
         
         <!-- insert error messages -->
         <ng-include src="'views/errorAlert.html'"></ng-include>
-        <ng-include src="'views/registerLogin.html'"></ng-include>
+        <ng-include  ng-show="false"src="'views/registerLogin.html'"></ng-include>
+        <ng-include src="'views/regLoginModal.html'"></ng-include>
         
-        <!-- insert footer div -->
+        <!-- insert footer div 
         <div class="alert alert-info alert-dismissible col-xs-12" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <div class="col-xs-12" id="footerSignedIn">
@@ -105,7 +116,7 @@
                 <h4 class="col-xs-6 col-sm-4 col-sm-offset-3"><a href="#">Updates  <span class="badge">2</span></a></h4>
                 <h4 class="col-xs-6 col-sm-4 col-sm-offset-1"><a href="#">New Comments <span class="badge">2</span></a></h4>
             </div>
-            </div> <!-- emd footer signed in -->
+            </div> --><!-- emd footer signed in -->
             <!-- <div class="col-xs-12" id="footerNotSingedIn">
                 <div class="col-xs-6 text-center" id="footerMessage">
                     <h4>Hello! <small>Welcome to Login Demo.</small></h4>
@@ -124,9 +135,12 @@
         
         <!-- //////////////   footer may be removed, but keep the errors for now --->
          
-        </div>
-            
+      <!--  </div>
         
+        
+        <!-- //// modal demo -->
+        
+   
     
         <!-- jQuery, bootstrap JS, and custom JS -->
         

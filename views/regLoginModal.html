@@ -1,19 +1,22 @@
-        <!-- /// Register View \\\ -->
+<!-- Modal -->
+<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="authCtrl">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
         
-            <div class="col-xs-11 col-sm-6 col-sm-offset-3  col-md-6 col-md-offset-3 registerLoginModal" id="registerModal" ng-show="true" ng-controller="authCtrl">
+        <!-- modal header -->
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Register</h4>
+      </div>
+        
+        <!-- modal body -->
+      <div class="modal-body">
+          
+          <div class="row">
+       
+          <!-- social buttons -->
             
-            
-            
-            <!-- greeting -->
-            <div class="col-xs-12 text-center">
-                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h2>Register<br><small>Already have an account? <a href="#">Sign In</a></small></h2>
-            
-            </div>
-            
-            <!-- social buttons -->
-            
-            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 buttonGroup">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 buttonGroup">
                 
                 <h3 class="text-center">Register via your Social Media Account</h3>
                 
@@ -64,7 +67,7 @@
                      <span ng-show="registerForm.verifyPassword.$valid && registerForm.verifyPassword.$touched && user.password == user.verifyPassword" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                 </div>
                 
-                <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword">Submit</button>
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword" data-dismiss="modal" ng-click="registerUser()">Submit</button>
                 
                 <p class="text-center formError" ng-show="registerForm.email.$invalid && registerForm.email.$touched">Please enter a valid email</p>
                 
@@ -72,42 +75,59 @@
                 
                 <p class="text-center formError" ng-show="registerForm.verifyPassword.$touched && registerForm.password.$touched && user.password != user.verifyPassword ">Passwords do not match</p>
             </form>
-            
-            
-        </div> 
-
-
-<!-- /// Login View \\\ -->
+          </div>
+      </div>
         
-        <div class="col-xs-11 col-sm-6 col-sm-offset-3  col-md-6 col-md-offset-3 registerLoginModal" id="loginModal" ng-show="false">
+        
+        <!-- modal footer -->
+      <div class="modal-footer">
+          <p class="text-center">Already have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#signInModal">Sign in</a> </p>
+      <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+<!-- /////// login modal \\\\\\\ -->
+
+<!-- Modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" ng-controller="authCtrl">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        
+        <!-- modal header -->
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModalLabel">Login</h4>
+      </div>
+        
+        <!-- modal body -->
+      <div class="modal-body">
+          
+          <div class="row">
+       
+          <!-- social buttons -->
             
-            
-            
-            <!-- greeting -->
-            <div class="col-xs-12 text-center">
-                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h2>Login<br><small>Need an account? <a href="#">Register</a></small></h2>
-            </div>
-            
-            <!-- social buttons -->
-            
-            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 buttonGroup">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 buttonGroup">
                 
                 <h3 class="text-center">Login via your Social Media Account</h3>
                 
-                 <button class="btn btn-default btn-block facebookButton loginButton" value="loginFacebook">
+                 <button class="btn btn-default btn-block facebookButton loginButton" value="registerFacebook">
                <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 Facebook
             </button>
-            <button class="btn btn-default btn-block twitterButton loginButton" value="loginTwitter" >
+            <button class="btn btn-default btn-block twitterButton loginButton" value="registerTwitter" >
                <i class="fa fa-twitter-square" aria-hidden="true"></i>
                 Twitter
             </button>
-            <button class="btn btn-default  btn-block googleButton loginButton" value="loginGoogle">
+            <button class="btn btn-default  btn-block googleButton loginButton" value="registerGoogle">
                <i class="fa fa-google" aria-hidden="true"></i>
                 Google
             </button>
-            <button class="btn btn-default  btn-block githubButton loginButton" value="loginGitHub">
+            <button class="btn btn-default  btn-block githubButton loginButton" value="registerGitHub">
                <i class="fa fa-github-square" aria-hidden="true"></i>
                 Git Hub
             </button>
@@ -115,27 +135,45 @@
         
             <!-- email/password register -->
             
-            <form name="loginForm" class="form-group col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" novalidate ng-submit="login()">
+            <form class="form-group col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" name="registerForm" ng-submit="signIn()" novalidate>
                 <h3 class="text-center">-- or --</h3>
                 
-                <div class="form-group has-feedback" ng-class="{'has-error': loginForm.email.$invalid && loginForm.email.$touched, 'has-success': loginForm.email.$valid && loginForm.email.$touched}">
-                    <input type="email" name="email" class="form-control text-center" placeholder="you@example.com" ng-model="user.email" ng-required="true"  />
-                     <span ng-show="loginForm.email.$invalid && loginForm.email.$touched" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-                     <span ng-show="loginForm.email.$valid && loginForm.email.$touched" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                <div class="form-group has-feedback" ng-class="{'has-error': registerForm.email.$invalid && registerForm.email.$touched, 'has-success': registerForm.email.$valid && registerForm.email.$touched }">
+                    <input type="email" name="email" class="form-control text-center" placeholder="you@example.com" ng-model="user.email" ng-required="true" />
+                    
+                    <span ng-show="registerForm.email.$invalid && registerForm.email.$touched" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                     <span ng-show="registerForm.email.$valid && registerForm.email.$touched" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                    
+                    
                 </div>
                 
-                <div class="form-group has-feedback" ng-class="{'has-error': loginForm.password.$invalid && loginForm.password.$touched, 'has-success': loginForm.password.$valid && loginForm.password.$touched}">
+                <div class="form-group has-feedback" ng-class="{'has-error': registerForm.password.$invalid && registerForm.password.$touched, 'has-success': registerForm.password.$valid && registerForm.password.$touched }">
                     <input type="password" name="password" class="form-control text-center" placeholder="password" ng-model="user.password" ng-required="true" />
-                    <span ng-show="loginForm.password.$invalid && loginForm.password.$touched" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-                     <span ng-show="loginForm.password.$valid && loginForm.password.$touched" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                    
+                    <span ng-show="registerForm.password.$invalid && registerForm.password.$touched" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                     <span ng-show="registerForm.password.$valid && registerForm.password.$touched" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                 </div>
-             
-                <button type="submit" class="btn btn-primary btn-block" ng-disabled="loginForm.$invalid">Submit</button>
                 
-                 <p class="text-center formError" ng-show="loginForm.email.$invalid && loginForm.email.$touched">Please enter a valid email</p>
                 
-                <p class="text-center formError" ng-show="loginForm.password.$invalid && loginForm.password.$touched">Password required</p>
+                
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword" data-dismiss="modal" ng-click="signIn()">Submit</button>
+                
+                <p class="text-center formError" ng-show="registerForm.email.$invalid && registerForm.email.$touched">Please enter a valid email</p>
+                
+                <p class="text-center formError" ng-show="registerForm.password.$invalid && registerForm.password.$touched">Password required</p>
+                
+                
             </form>
-            
-            
-        </div>
+          </div>
+      </div>
+        
+        
+        <!-- modal footer -->
+      <div class="modal-footer">
+          <p class="text-center">Need an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#regModal">register</a> </p>
+      <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>

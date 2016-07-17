@@ -1,4 +1,5 @@
-$(document).ready(function(){
+$(document).on("change",function(){
+
    
     // --- login register form -- //
     
@@ -24,7 +25,7 @@ $(document).ready(function(){
     
     // close button
     
-        $(".close").on('click', function(){
+      /*  $(".close").on('click', function(){
             closeForm();
             alert("clicked");
         });
@@ -32,11 +33,17 @@ $(document).ready(function(){
         function closeForm(){
             formFade(loginForm, false);
             formFade(registerForm, false);
-        }
+        }  */
     
     
     // clicking on social button 
     
+    
+    // -- test -- //
+    
+    function test(){
+        alert("works");
+    }
     
     // --- footer nav bar --- //
     

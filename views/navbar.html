@@ -32,17 +32,24 @@
         
       </ul> 
         
-      <div class="navbar-right">
-        <ul class="nav navbar-nav  ">
+      <div class="navbar-right" ng-controller="authCtrl">
+          <!-- when user is logged in -->
+        <ul class="nav navbar-nav" ng-show="firebaseUser">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Michael <i class="fa fa-user" aria-hidden="true"></i> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{firebaseUser.email}} <i class="fa fa-user" aria-hidden="true"></i> <span class="caret"></span></a>
           <ul class="dropdown-menu ">
             <li class="text-center"><a href="#">Account Settings</a></li>
             <li role="separator" class="divider"></li>
-            <li class="text-center"><a href="#">Log Out</a></li>
+            <li class="text-center"><a href="#" ng-click="signOut()">Log Out</a></li>
           </ul>
         </li>
       </ul>
+          <!-- when there is no user -->
+          <ul class="nav navbar-nav" ng-show="!firebaseUser">
+            <li> <a href="#" data-toggle="modal" data-target="#regModal">Register</a> </li>
+            <li> <a href="#" data-toggle="modal" data-target="#signInModal">Login</a> </li>
+          </ul>
+          
         </div>
         
         

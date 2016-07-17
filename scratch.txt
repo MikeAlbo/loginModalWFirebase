@@ -1,0 +1,168 @@
+/* register and login modal */
+
+/* media queries */
+
+@media (min-height: 1px){  /* ex: iphone 4s */
+    .registerLoginModal{
+        height: 89%;
+        top: 10%;
+        font-size: .7em;
+    }
+}
+@media (min-height: 568px){  /* ex: iphone 5s */
+    .registerLoginModal{
+        height: 80%;
+        top: 10%;
+        font-size: .8em;
+    }
+}
+
+@media (min-height: 667px){  /* ex: iphone 6s */
+    .registerLoginModal{
+        height: 70%;
+        top: 15%;
+        font-size: .8em;
+    }
+}
+
+@media (min-height: 667px){  /* ex: iphone 6s */
+    .registerLoginModal{
+        height: 70%;
+        top: 15%;
+        font-size: .8em;
+    }
+}
+
+@media (min-height: 800px){  /* ex: > ipad2 */
+    .registerLoginModal{
+        height: 55%;
+        top: 20%;
+        font-size:1em;
+    }
+}
+
+@media (min-height: 1000px){  /* ex: > hd moniter */
+    .registerLoginModal{
+        height: 55%;
+        top: 15%;
+        font-size: 1em;
+    }
+}
+.registerLoginModal{
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(250,250,250,.95);
+    box-shadow: 1px 1px 3px 1px rgba(150,150,150,.5);
+    border-radius: 4px;
+}
+
+.registerLoginModal h2 {
+    font-size: 3em;
+    line-height: .6em;
+}
+
+.registerLoginModal h2 small {
+    font-size: .3em;
+    padding: 0;
+}
+
+.registerLoginModal h3 {
+    font-size: 1em;
+}
+
+.registerLoginModal form h3 {
+    margin: .5em 0 .5em 0;
+}
+
+.registerLoginModal form input {
+    margin: .1em 0;
+}
+
+
+
+<!-- /////// login modal \\\\\\\ -->
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" ng-controller="authCtrl">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        
+        <!-- modal header -->
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModalLabel">Login</h4>
+      </div>
+        
+        <!-- modal body -->
+      <div class="modal-body">
+          
+          <div class="row">
+       
+          <!-- social buttons -->
+            
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 buttonGroup">
+                
+                <h3 class="text-center">Login via your Social Media Account</h3>
+                
+                 <button class="btn btn-default btn-block facebookButton loginButton" value="registerFacebook">
+               <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                Facebook
+            </button>
+            <button class="btn btn-default btn-block twitterButton loginButton" value="registerTwitter" >
+               <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                Twitter
+            </button>
+            <button class="btn btn-default  btn-block googleButton loginButton" value="registerGoogle">
+               <i class="fa fa-google" aria-hidden="true"></i>
+                Google
+            </button>
+            <button class="btn btn-default  btn-block githubButton loginButton" value="registerGitHub">
+               <i class="fa fa-github-square" aria-hidden="true"></i>
+                Git Hub
+            </button>
+            </div>
+        
+            <!-- email/password register -->
+            
+            <form class="form-group col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" name="registerForm" ng-submit="signIn()" novalidate>
+                <h3 class="text-center">-- or --</h3>
+                
+                <div class="form-group has-feedback" ng-class="{'has-error': registerForm.email.$invalid && registerForm.email.$touched, 'has-success': registerForm.email.$valid && registerForm.email.$touched }">
+                    <input type="email" name="email" class="form-control text-center" placeholder="you@example.com" ng-model="user.email" ng-required="true" />
+                    
+                    <span ng-show="registerForm.email.$invalid && registerForm.email.$touched" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                     <span ng-show="registerForm.email.$valid && registerForm.email.$touched" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                    
+                    
+                </div>
+                
+                <div class="form-group has-feedback" ng-class="{'has-error': registerForm.password.$invalid && registerForm.password.$touched, 'has-success': registerForm.password.$valid && registerForm.password.$touched }">
+                    <input type="password" name="password" class="form-control text-center" placeholder="password" ng-model="user.password" ng-required="true" />
+                    
+                    <span ng-show="registerForm.password.$invalid && registerForm.password.$touched" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                     <span ng-show="registerForm.password.$valid && registerForm.password.$touched" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                </div>
+                
+                
+                
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword" data-dismiss="modal" ng-click="signIn()">Submit</button>
+                
+                <p class="text-center formError" ng-show="registerForm.email.$invalid && registerForm.email.$touched">Please enter a valid email</p>
+                
+                <p class="text-center formError" ng-show="registerForm.password.$invalid && registerForm.password.$touched">Password required</p>
+                
+                
+            </form>
+          </div>
+      </div>
+        
+        
+        <!-- modal footer -->
+      <div class="modal-footer">
+          <p class="text-center">Need an account? <a href="#" data-toggle="modal" data-target="#regModal">register</a> </p>
+      <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>

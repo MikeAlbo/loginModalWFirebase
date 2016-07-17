@@ -195,86 +195,31 @@ body{
 }
 
 /* -------------------------------------- */
-/* register and login modal */
+/* login / register odal */
 
-/* media queries */
-
-@media (min-height: 1px){  /* ex: iphone 4s */
-    .registerLoginModal{
-        height: 89%;
-        top: 10%;
-        font-size: .7em;
-    }
-}
-@media (min-height: 568px){  /* ex: iphone 5s */
-    .registerLoginModal{
-        height: 80%;
-        top: 10%;
-        font-size: .8em;
-    }
-}
-
-@media (min-height: 667px){  /* ex: iphone 6s */
-    .registerLoginModal{
-        height: 70%;
-        top: 15%;
-        font-size: .8em;
-    }
-}
-
-@media (min-height: 667px){  /* ex: iphone 6s */
-    .registerLoginModal{
-        height: 70%;
-        top: 15%;
-        font-size: .8em;
-    }
-}
-
-@media (min-height: 800px){  /* ex: > ipad2 */
-    .registerLoginModal{
-        height: 55%;
-        top: 20%;
-        font-size:1em;
-    }
-}
-
-@media (min-height: 1000px){  /* ex: > hd moniter */
-    .registerLoginModal{
-        height: 55%;
-        top: 15%;
-        font-size: 1em;
-    }
-}
-.registerLoginModal{
-    position: fixed;
-    z-index: 1;
-    background-color: rgba(250,250,250,.95);
-    box-shadow: 1px 1px 3px 1px rgba(150,150,150,.5);
-    border-radius: 4px;
-}
-
-.registerLoginModal h2 {
-    font-size: 3em;
-    line-height: .6em;
-}
-
-.registerLoginModal h2 small {
-    font-size: .3em;
-    padding: 0;
-}
-
-.registerLoginModal h3 {
+#regModal h3 {
     font-size: 1em;
+    margin-bottom: 1em;
 }
 
-.registerLoginModal form h3 {
-    margin: .5em 0 .5em 0;
-}
-
-.registerLoginModal form input {
-    margin: .1em 0;
-}
+#regModal h4 {
+    font-size: 2em;
     
+}
+
+#signInModal h3 {
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+#signInModal h4 {
+    font-size: 2em;
+    
+}
+
+
+
+
 /*  social buttons */
     
 .buttonGroup{
@@ -287,13 +232,14 @@ body{
     padding: .5em;
     text-align: left;
     padding: .1em;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .loginButton i {
-    margin: 0 2em 0 1em;
-    font-size: 1.2em;
-    padding: .1em
+    margin: 0 2em 0 2em;
+    font-size: .8em;
+    padding: .2em;
+    text-align: center;
     
 }
     
@@ -313,10 +259,6 @@ body{
     background-color: rgba(100,100,100,1);
 }
 
-.close {
-    position: relative !important;
-    top: .2em !important;
-}
 
 
 /* --- form errors -- */
