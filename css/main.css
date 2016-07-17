@@ -23,7 +23,7 @@ body{
 /* -- center the nav links -- */
 
 .navbar {
-    height: 5%;
+    
 }
 .navbar .navbar-nav {
   display: inline-block;
@@ -58,9 +58,6 @@ body{
 
 }
 
-.dropdown-menu {
-    background-color: rgba(225,225,225,.9);
-}
 
 @media (min-width: 768px){
     #createPostNav {
