@@ -58,6 +58,10 @@ body{
 
 }
 
+.dropdown-menu {
+    background-color: rgba(225,225,225,.9);
+}
+
 @media (min-width: 768px){
     #createPostNav {
         font-size: 1.3em;
