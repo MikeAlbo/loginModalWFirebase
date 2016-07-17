@@ -156,7 +156,7 @@
                 
                 
                 
-                <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword" data-dismiss="modal" ng-click="signIn()">Submit</button>
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid" data-dismiss="modal" ng-click="signIn()">Submit</button>
                 
                 <p class="text-center formError" ng-show="registerForm.email.$invalid && registerForm.email.$touched">Please enter a valid email</p>
                 
