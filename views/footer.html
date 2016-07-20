@@ -1,0 +1,44 @@
+<!-- alerts, bottom of page -->
+
+<!-- change  out the alert-success, etc. with custom classes -->
+
+
+
+<!-- successful login, or on page load with auto log in --> 
+<div class="alert alert-success alert-dismissible col-xs-12" role="alert" ng-controller="authCtrl" id="loginSuccess">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>  
+  
+    <h4 class=" text-center">Welcome {{firebaseUser.email}}!  
+        <i class="fa fa-user footerAvatar" aria-hidden="true"></i>
+        &nbsp; <a class="alert-link" href="#">Account Settings</a> <br>
+        <small>Not you? <a class="alert-link" href="#" ng-click="signOut()" >Log out.</a> </small>
+      </h4>
+        
+    </div>  
+    
+    <!-- Not logged in, or on page load with auto log in -->   
+  
+<div class="alert alert-info alert-dismissible col-xs-12" role="alert" ng-controller="authCtrl" id="notLoggedIn">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>      
+
+<h4 class=" text-center">Welcome to the demo site!
+        <br> <small>You will need to 
+            <a class="alert-link" data-toggle="modal" data-target="#regModal">Register</a> or
+            <a class="alert-link" href="#" data-toggle="modal" data-target="#signInModal">Sign In</a> in order to save or comment.
+        </small>
+            
+      </h4>
+        
+    </div>
+
+<!-- Error msg -->   
+  
+<div class="alert alert-danger alert-dismissible col-xs-12" role="alert" ng-controller="authCtrl"  ng-hide="true">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>      
+
+    <h4 class=" text-center">
+    There Seems to be an error: 
+    {{errorMessage}}        
+    </h4>
+        
+    </div>

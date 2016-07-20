@@ -1,3 +1,4 @@
+
 $(document).on("change",function(){
 
    
@@ -39,14 +40,9 @@ $(document).on("change",function(){
     // clicking on social button 
     
     
-    // -- test -- //
-    
-    function test(){
-        alert("works");
-    }
-    
     // --- footer nav bar --- //
     
     
 });
+
 

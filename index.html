@@ -23,11 +23,11 @@
         
         <!-- custom css -->
         <link type="text/css" rel="stylesheet" href="css/main.css" />
-        
-        
+     
         <!-- import angular -->
         
         <script type="application/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="application/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
         
         <!-- Firebase -->
         <script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
@@ -98,8 +98,8 @@
         
         <!-- insert error messages -->
         <ng-include src="'views/errorAlert.html'"></ng-include>
-        <ng-include  ng-show="false"src="'views/registerLogin.html'"></ng-include>
         <ng-include src="'views/regLoginModal.html'"></ng-include>
+        <ng-include src="'views/footer.html'"></ng-include>
         
         <!-- insert footer div 
         <div class="alert alert-info alert-dismissible col-xs-12" role="alert">
@@ -144,6 +144,7 @@
     
         <!-- jQuery, bootstrap JS, and custom JS -->
         
+        
         <!-- jQuery -->
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -152,7 +153,10 @@
     
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         
-        <!-- custom JS -->
+         <!-- custom JS -->
         <script type="application/javascript" src="js/main.js"></script>
+       
+        
+       
     </body>
 </html>

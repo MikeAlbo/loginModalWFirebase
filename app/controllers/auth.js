@@ -1,17 +1,20 @@
 loginDemo.controller("authCtrl", ["$scope", "Auth", function($scope, Auth){
     
-   
     
     //listen for status change
     
         $scope.auth = Auth;
         $scope.auth.$onAuthStateChanged(function(firebaseUser){
             $scope.firebaseUser = firebaseUser;
+            $scope.errorMessage = "Test error, go fix this.";
             
             if($scope.firebaseUser){
-                console.log($scope.firebaseUser.email)
+                //console.log($scope.firebaseUser.email);
+                alertAnimation("#loginSuccess");
+                
             } else {
-                console.log("no user logged in");
+                //console.log("no user logged in");
+                alertAnimation("#notLoggedIn");
             }
         });
     
@@ -52,9 +55,12 @@ loginDemo.controller("authCtrl", ["$scope", "Auth", function($scope, Auth){
 }]); // end AuthCtrl
 
 
+// animate alerts 
 
+function alertAnimation(alertId){
+    jQuery(alertId).css("visibility", "visible").animate({
+        opacity: 1
+    }, 300).delay(5000).fadeOut(300);
+}; 
 
-
-
-// clear register window
 

@@ -1,3 +1,3 @@
-var loginDemo = angular.module('loginDemo', ["firebase"]);
+var loginDemo = angular.module('loginDemo', ["firebase", "ngAnimate"]);
 
 
